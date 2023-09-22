@@ -35,7 +35,7 @@ void merge(int leftArr[], int lsize, int rightArr[], int rsize, int fullArr[])
     }
 }
 
-void qsort(int array[], int n)
+void mergeSort(int array[], int n)
 {
     if (n <= 1)
         return;
@@ -46,8 +46,8 @@ void qsort(int array[], int n)
     int *rightArr = (int *)malloc(sizeof(int) * rsize);
     memcpy(leftArr, array, mid * sizeof(array[0]));
     memcpy(rightArr, array + mid, rsize * sizeof(array[0]));
-    qsort(leftArr, mid);
-    qsort(rightArr, rsize);
+    mergeSort(leftArr, mid);
+    mergeSort(rightArr, rsize);
     merge(leftArr, mid, rightArr, rsize, array);
     free(leftArr);
     free(rightArr);
@@ -58,7 +58,7 @@ int main()
     int array[] = {4, 31, 2, 9, 0, 3, 65, 90, 45, 34};
     int size = sizeof(array) / sizeof(array[0]);
 
-    qsort(array, size);
+    mergeSort(array, size);
     for (int i = 0; i < size; i++)
     {
         printf("%d\n", array[i]);
