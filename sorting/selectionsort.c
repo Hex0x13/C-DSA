@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void mergeSort(int array[], int n)
+void selectionSort(int array[], int n)
 {
     for (int i = 0; i < n - 1; i++)
     {
@@ -24,7 +24,7 @@ int main()
     int array[] = {4, 31, 2, 4, 9, 0, 3, 65, 90, 45, 34};
     int size = sizeof(array) / sizeof(array[0]);
 
-    mergeSort(array, size);
+    selectionSort(array, size);
     for (int i = 0; i < size; i++)
     {
         printf("%d\n", array[i]);
